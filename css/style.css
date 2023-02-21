@@ -114,8 +114,14 @@ button::-moz-focus-inner {
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
-  src: url("fonts/fontawesome-webfont.eot?v=4.7.0");
-  src: url("fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+  src: url("fonts/fontawesome-webfont.eot?v=#4.0.3");
+  src: url("fonts/fontawesome-webfont.eot?#iefix&v=#4.0.3") format("embedded-opentype"), url("fonts/fontawesome-webfont.woff?v=#4.0.3") format("woff"), url("fonts/fontawesome-webfont.ttf?v=#4.0.3") format("truetype"), url("fonts/fontawesome-webfont.svg#fontawesomeregular?v=#4.0.3") format("svg");
+}
+@font-face {
+  font-family: "Open Sans Light";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/OpenSans-Regular.ttf") format("truetype");
 }
 html,
 body,
@@ -123,8 +129,8 @@ body,
   height: 100%;
 }
 body {
-  background: #eee;
-  font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background: #252423;
+  font: 16px "Times New Roman", "Open Sans Light", "Georgia", "Helvetica Neue", "Helvetica", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
 }
 .outer {
@@ -174,7 +180,7 @@ body {
   -ms-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
   z-index: 1;
-  background: #eee;
+  background: #252423;
 }
 .mobile-nav-on #wrap {
   left: 280px;
@@ -194,19 +200,22 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #999;
+  color: #a4a4a4;
   margin-bottom: 1em;
   margin-left: 5px;
   line-height: 1em;
-  text-shadow: 0 1px #fff;
   font-weight: bold;
 }
 .article-inner,
-.archive-article-inner {
-  background: #fff;
-  -webkit-box-shadow: 1px 2px 3px #ddd;
-  box-shadow: 1px 2px 3px #ddd;
-  border: 1px solid #ddd;
+.article-entry .button,
+.article-more-link a,
+.archive-article-inner,
+#page-nav,
+.widget {
+  background: none repeat scroll 0% 0% #333534;
+  -webkit-box-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+  border: 1px solid #696969;
   border-radius: 3px;
 }
 .article-entry h1,
@@ -232,11 +241,11 @@ body {
 .article-entry h6,
 .widget h6 {
   font-size: 1em;
-  color: #999;
+  color: #a4a4a4;
 }
 .article-entry hr,
 .widget hr {
-  border: 1px dashed #ddd;
+  border: 1px dashed #696969;
 }
 .article-entry strong,
 .widget strong {
@@ -310,7 +319,7 @@ body {
 #header {
   height: 300px;
   position: relative;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #696969;
 }
 #header:before,
 #header:after {
@@ -405,9 +414,9 @@ body {
 .nav-icon {
   font-family: FontAwesome;
   text-align: center;
-  font-size: 14px;
-  width: 14px;
-  height: 14px;
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
   padding: 20px 15px;
   position: relative;
   cursor: pointer;
@@ -478,9 +487,9 @@ body {
 .search-form-input {
   border: none;
   background: none;
-  color: #555;
+  color: #c4c4c4;
   width: 100%;
-  font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font: 13px "Times New Roman", "Open Sans Light", "Georgia", "Helvetica Neue", "Helvetica", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   outline: none;
 }
 .search-form-input::-webkit-search-results-decoration,
@@ -507,23 +516,27 @@ body {
 }
 .article-inner {
   overflow: hidden;
+  background: #1f1f1f;
 }
+.article-index:before,
 .article-meta:before,
+.article-index:after,
 .article-meta:after {
   content: "";
   display: table;
 }
+.article-index:after,
 .article-meta:after {
   clear: both;
 }
 .article-date {
   float: left;
+  font-family: "Georgia", "Microsoft YaHei", "Times New Roman", serif;
 }
 .article-category {
   float: left;
   line-height: 1em;
   color: #ccc;
-  text-shadow: 0 1px #fff;
   margin-left: 8px;
 }
 .article-category:before {
@@ -539,7 +552,7 @@ body {
   text-decoration: none;
   font-size: 2em;
   font-weight: bold;
-  color: #555;
+  color: #c4c4c4;
   line-height: 1.1em;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
@@ -547,10 +560,10 @@ body {
   transition: color 0.2s;
 }
 a.article-title:hover {
-  color: #258fb8;
+  color: #4183c4;
 }
 .article-entry {
-  color: #555;
+  color: #f0f0f0;
   padding: 0 20px;
 }
 .article-entry:before,
@@ -560,6 +573,9 @@ a.article-title:hover {
 }
 .article-entry:after {
   clear: both;
+}
+.article-entry strong {
+  color: #f92676;
 }
 .article-entry p,
 .article-entry table {
@@ -583,8 +599,20 @@ a.article-title:hover {
   line-height: 1.1em;
   margin: 1.1em 0;
 }
+.article-entry h1,
+.article-entry h2 {
+  color: #9c9;
+}
+.article-entry h3,
+.article-entry h4 {
+  color: #6cc;
+}
+.article-entry h5,
+.article-entry h6 {
+  color: #69c;
+}
 .article-entry a {
-  color: #258fb8;
+  color: #4183c4;
   text-decoration: none;
 }
 .article-entry a:hover {
@@ -602,6 +630,26 @@ a.article-title:hover {
   height: auto;
   display: block;
   margin: auto;
+  background-color: #fff;
+}
+.article-entry .button {
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1em;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: #502829;
+  color: #a4a4a4;
+  font-family: "Times New Roman", "Open Sans Light", "Georgia", "Helvetica Neue", "Helvetica", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-box-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+  border: 1px solid #696969;
+}
+.article-entry .button:hover {
+  background: #4183c4;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 1px #31699f;
 }
 .article-entry iframe {
   border: none;
@@ -613,22 +661,48 @@ a.article-title:hover {
 }
 .article-entry th {
   font-weight: bold;
-  border-bottom: 3px solid #ddd;
+  border-bottom: 3px solid #696969;
   padding-bottom: 0.5em;
 }
 .article-entry td {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #696969;
   padding: 10px 0;
 }
-.article-entry blockquote {
-  font-family: Georgia, "Times New Roman", serif;
-  margin: 1.6em 20px;
+.article-entry table {
+  color: #f0f0f0 !important;
+  margin-bottom: 16px;
+  border-radius: 3px;
+  border-collapse: initial;
+}
+.article-entry table thead th {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 2em;
   text-align: center;
+  background: #181818 !important;
+}
+.article-entry table th,
+.article-entry table td {
+  padding: 6px 13px;
+  -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.9);
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.9);
+  border: 1px solid #696969;
+  border-radius: 3px;
+}
+.article-entry blockquote {
+  font-style: italic;
+  font-family: "Georgia", "Open Sans Light", "Georgia", "Microsoft YaHei", "Times New Roman", serif;
+  margin: 1.6em 20px;
+  text-align: left;
+  border-left: 5px solid rgba(152,232,99,0.8);
+  margin: 0.65em 0 0.65em 4%;
+  padding-left: 1%;
+  padding-right: 1%;
 }
 .article-entry blockquote footer {
-  font-size: 14px;
+  font-size: 16px;
   margin: 1.6em 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Times New Roman", "Open Sans Light", "Georgia", "Helvetica Neue", "Helvetica", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .article-entry blockquote footer cite:before {
   content: "—";
@@ -648,7 +722,7 @@ a.article-title:hover {
   margin-left: 1em;
 }
 .article-entry .caption {
-  color: #999;
+  color: #a4a4a4;
   display: block;
   font-size: 0.9em;
   margin-top: 0.5em;
@@ -671,26 +745,59 @@ a.article-title:hover {
   height: 100%;
   margin-top: 0;
 }
+.article-more-link {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(1, #000));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(1, #000));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(1, #000));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(1, #000));
+  background-image: -webkit--webkit-linear-gradient(top, transparent, #000);
+  background-image: -webkit--moz-linear-gradient(top, transparent, #000);
+  background-image: -webkit--ms-linear-gradient(top, transparent, #000);
+  background-image: -webkit-linear-gradient(to bottom, transparent, #000);
+  background-image: -moz--webkit-linear-gradient(top, transparent, #000);
+  background-image: -moz--moz-linear-gradient(top, transparent, #000);
+  background-image: -moz--ms-linear-gradient(top, transparent, #000);
+  background-image: -moz-linear-gradient(to bottom, transparent, #000);
+  background-image: -ms--webkit-linear-gradient(top, transparent, #000);
+  background-image: -ms--moz-linear-gradient(top, transparent, #000);
+  background-image: -ms--ms-linear-gradient(top, transparent, #000);
+  background-image: -ms-linear-gradient(to bottom, transparent, #000);
+  background-image: -o--webkit-linear-gradient(top, transparent, #000);
+  background-image: -o--moz-linear-gradient(top, transparent, #000);
+  background-image: -o--ms-linear-gradient(top, transparent, #000);
+  background-image: -o-linear-gradient(to bottom, transparent, #000);
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  margin: 0px -20px;
+  padding: 15px 20px;
+  text-align: center;
+}
 .article-more-link a {
+  position: relative;
+  cursor: pointer;
   display: inline-block;
   line-height: 1em;
-  padding: 6px 15px;
-  border-radius: 15px;
-  background: #eee;
-  color: #999;
-  text-shadow: 0 1px #fff;
-  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: #502829;
+  color: #a4a4a4;
+  margin: 0px auto;
+  top: 75px;
 }
 .article-more-link a:hover {
-  background: #258fb8;
+  background: #4183c4;
   color: #fff;
   text-decoration: none;
-  text-shadow: 0 1px #1e7293;
+  text-shadow: 0 1px #31699f;
 }
 .article-footer {
   font-size: 0.85em;
   line-height: 1.6em;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #696969;
   padding-top: 1.6em;
   margin: 0 20px 20px;
 }
@@ -703,11 +810,11 @@ a.article-title:hover {
   clear: both;
 }
 .article-footer a {
-  color: #999;
+  color: #a4a4a4;
   text-decoration: none;
 }
 .article-footer a:hover {
-  color: #555;
+  color: #c4c4c4;
 }
 .article-tag-list-item {
   float: left;
@@ -759,15 +866,14 @@ a.article-title:hover {
     margin-left: -4px;
     content: "";
     border-radius: 50%;
-    background: #ddd;
+    background: #696969;
     -webkit-box-shadow: 0 1px 2px #fff;
     box-shadow: 0 1px 2px #fff;
   }
 }
 .article-nav-link-wrap {
   text-decoration: none;
-  text-shadow: 0 1px #fff;
-  color: #999;
+  color: #a4a4a4;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -776,7 +882,7 @@ a.article-title:hover {
   display: block;
 }
 .article-nav-link-wrap:hover {
-  color: #555;
+  color: #c4c4c4;
 }
 @media screen and (min-width: 768px) {
   .article-nav-link-wrap {
@@ -801,7 +907,7 @@ a.article-title:hover {
 .article-nav-caption {
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #ddd;
+  color: #696969;
   line-height: 1em;
   font-weight: bold;
 }
@@ -833,17 +939,17 @@ a.article-title:hover {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font: 14px "Times New Roman", "Open Sans Light", "Georgia", "Helvetica Neue", "Helvetica", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 0 15px;
-  color: #555;
+  color: #c4c4c4;
   outline: none;
-  border: 1px solid #ddd;
+  border: 1px solid #696969;
   border-radius: 3px 3px 0 0;
   height: 36px;
   line-height: 36px;
 }
 .article-share-links {
-  background: #eee;
+  background: #252423;
 }
 .article-share-links:before,
 .article-share-links:after {
@@ -856,19 +962,18 @@ a.article-title:hover {
 .article-share-twitter,
 .article-share-facebook,
 .article-share-pinterest,
-.article-share-linkedin {
+.article-share-google {
   width: 50px;
   height: 36px;
   display: block;
   float: left;
   position: relative;
   color: #999;
-  text-shadow: 0 1px #fff;
 }
 .article-share-twitter:before,
 .article-share-facebook:before,
 .article-share-pinterest:before,
-.article-share-linkedin:before {
+.article-share-google:before {
   font-size: 20px;
   font-family: FontAwesome;
   width: 20px;
@@ -883,7 +988,7 @@ a.article-title:hover {
 .article-share-twitter:hover,
 .article-share-facebook:hover,
 .article-share-pinterest:hover,
-.article-share-linkedin:hover {
+.article-share-google:hover {
   color: #fff;
 }
 .article-share-twitter:before {
@@ -907,12 +1012,12 @@ a.article-title:hover {
   background: #cb2027;
   text-shadow: 0 1px #a21a1f;
 }
-.article-share-linkedin:before {
-  content: "\f0e1";
+.article-share-google:before {
+  content: "\f0d5";
 }
-.article-share-linkedin:hover {
-  background: #0077b5;
-  text-shadow: 0 1px #005f91;
+.article-share-google:hover {
+  background: #dd4b39;
+  text-shadow: 0 1px #be3221;
 }
 .article-gallery {
   background: #000;
@@ -938,17 +1043,24 @@ a.article-title:hover {
   max-width: 100%;
   margin: 0 auto;
 }
+.toggle-content {
+  max-height: 250px;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  transition: 0.5s;
+}
 #comments {
   background: #fff;
   -webkit-box-shadow: 1px 2px 3px #ddd;
   box-shadow: 1px 2px 3px #ddd;
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #696969;
   border-radius: 3px;
   margin: 50px 0;
 }
 #comments a {
-  color: #258fb8;
+  color: #4183c4;
 }
 .archives-wrap {
   margin: 50px 0;
@@ -992,11 +1104,12 @@ a.article-title:hover {
 .archive-article-inner {
   padding: 10px;
   margin-bottom: 15px;
+  background-color: #1f1f1f;
 }
 .archive-article-title {
   text-decoration: none;
   font-weight: bold;
-  color: #555;
+  color: #f0f0f0;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
   -ms-transition: color 0.2s;
@@ -1004,13 +1117,13 @@ a.article-title:hover {
   line-height: 1.6em;
 }
 .archive-article-title:hover {
-  color: #258fb8;
+  color: #4183c4;
 }
 .archive-article-footer {
   margin-top: 1em;
 }
 .archive-article-date {
-  color: #999;
+  color: #a4a4a4;
   text-decoration: none;
   font-size: 0.85em;
   line-height: 1em;
@@ -1019,13 +1132,9 @@ a.article-title:hover {
 }
 #page-nav {
   margin: 50px auto;
-  background: #fff;
-  -webkit-box-shadow: 1px 2px 3px #ddd;
-  box-shadow: 1px 2px 3px #ddd;
-  border: 1px solid #ddd;
-  border-radius: 3px;
+  background: #1f1f1f;
   text-align: center;
-  color: #999;
+  color: #a4a4a4;
   overflow: hidden;
 }
 #page-nav:before,
@@ -1039,15 +1148,13 @@ a.article-title:hover {
 #page-nav a,
 #page-nav span {
   padding: 10px 20px;
-  line-height: 1;
-  height: 2ex;
 }
 #page-nav a {
-  color: #999;
+  color: #a4a4a4;
   text-decoration: none;
 }
 #page-nav a:hover {
-  background: #999;
+  background: #2ca6cb;
   color: #fff;
 }
 #page-nav .prev {
@@ -1065,20 +1172,125 @@ a.article-title:hover {
   }
 }
 #page-nav .current {
-  color: #555;
+  color: #c4c4c4;
   font-weight: bold;
 }
 #page-nav .space {
-  color: #ddd;
+  color: #696969;
+}
+.archive ul {
+  list-style: none;
+  margin-left: 20px;
+  margin-top: -26px;
+  border-left: 4px solid #cacaca;
+}
+@media mq-mobile, mq-tablet {
+  .archive ul {
+    margin-left: 6px;
+  }
+}
+.archive ul li {
+  padding-left: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.archive ul li:before {
+  border-color: transparent #cacaca;
+  border-style: solid;
+  border-width: 0.35em 0 0.35em 0.45em;
+  display: block;
+  height: 0;
+  width: 0;
+  left: -1em;
+  top: 1em;
+  position: relative;
+}
+.archive ul li time {
+  margin-right: 8px;
+  color: #c4c4c4;
+  font-size: 20px;
+}
+.archive ul li a {
+  text-decoration: none;
+  color: #4183c4;
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media mq-tablet, mq-mobile {
+  .archive ul li a {
+    display: block;
+    width: 100%;
+    text-overflow: ellipsis;
+  }
+}
+.archive .archive-item {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #ddd;
+}
+.archive .archive-year {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.archive .archive-article-title {
+  width: 100%;
+}
+.archive .archive-tag {
+  text-decoration: none;
+  font-size: 0.85em;
+  line-height: 0.8em;
+  float: right;
+  text-overflow: ellipsis;
+}
+@media mq-tablet, mq-mobile {
+  .archive .archive-tag {
+    width: 100%;
+  }
+  .archive .archive-tag .article-tag-list-item {
+    width: 100%;
+  }
+  .archive .archive-tag .article-tag-list {
+    width: 100%;
+  }
+}
+.archive .archive-tag ul,
+.archive .archive-tag li {
+  margin: 0px 3px;
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .archive .archive-tag ul,
+  .archive .archive-tag li {
+    display: block;
+  }
+}
+@media screen and (min-width: 768px) {
+  .archive .archive-tag ul,
+  .archive .archive-tag li {
+    display: block;
+  }
+}
+.archive .archive-tag a {
+  text-decoration: none;
+  color: #a4a4a4;
+  white-space: nowrap;
+}
+@media mq-tablet, mq-mobile {
+  .archive .archive-tag a {
+    display: block;
+    width: 100%;
+    text-overflow: ellipsis;
+  }
 }
 #footer {
   background: #262a30;
   padding: 50px 0;
-  border-top: 1px solid #ddd;
-  color: #999;
+  border-top: 1px solid #696969;
+  color: #a4a4a4;
 }
 #footer a {
-  color: #258fb8;
+  color: #4183c4;
   text-decoration: none;
 }
 #footer a:hover {
@@ -1094,11 +1306,11 @@ a.article-title:hover {
   margin: 0 -20px;
   padding: 15px 20px;
   border-style: solid;
-  border-color: #ddd;
+  border-color: #696969;
   border-width: 1px 0;
   overflow: auto;
   color: #ccc;
-  line-height: 22.400000000000002px;
+  line-height: 25.6px;
 }
 .article-entry .highlight .gutter pre,
 .article-entry .gist .gist-file .gist-data .line-numbers {
@@ -1107,10 +1319,10 @@ a.article-title:hover {
 }
 .article-entry pre,
 .article-entry code {
-  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace, "Microsoft YaHei";
 }
 .article-entry code {
-  background: #eee;
+  background: #252423;
   text-shadow: 0 1px #fff;
   padding: 0 0.3em;
 }
@@ -1154,7 +1366,7 @@ a.article-title:hover {
   padding-right: 20px;
 }
 .article-entry .highlight .line {
-  height: 22.400000000000002px;
+  height: 25.6px;
 }
 .article-entry .highlight .line.marked {
   background: #515151;
@@ -1162,14 +1374,14 @@ a.article-title:hover {
 .article-entry .gist {
   margin: 0 -20px;
   border-style: solid;
-  border-color: #ddd;
+  border-color: #696969;
   border-width: 1px 0;
   background: #2d2d2d;
   padding: 15px 20px 15px 0;
 }
 .article-entry .gist .gist-file {
   border: none;
-  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace, "Microsoft YaHei";
   margin: 0;
 }
 .article-entry .gist .gist-file .gist-data {
@@ -1192,14 +1404,14 @@ a.article-title:hover {
 .article-entry .gist .gist-file .gist-meta {
   background: #2d2d2d;
   color: #999;
-  font: 0.85em -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font: 0.85em "Times New Roman", "Open Sans Light", "Georgia", "Helvetica Neue", "Helvetica", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-shadow: 0 0;
   padding: 0;
   margin-top: 1em;
   margin-left: 20px;
 }
 .article-entry .gist .gist-file .gist-meta a {
-  color: #258fb8;
+  color: #4183c4;
   font-weight: normal;
 }
 .article-entry .gist .gist-file .gist-meta a:hover {
@@ -1275,7 +1487,7 @@ pre .javascript .function {
 @media screen and (max-width: 479px) {
   .mobile-nav-link {
     display: block;
-    color: #999;
+    color: #a4a4a4;
     text-decoration: none;
     padding: 15px 20px;
     font-weight: bold;
@@ -1295,19 +1507,18 @@ pre .javascript .function {
 .widget-wrap {
   margin: 50px 0;
 }
+.widget-title {
+  font-family: "Georgia", "Microsoft YaHei", "Times New Roman", serif;
+}
 .widget {
   color: #777;
-  text-shadow: 0 1px #fff;
-  background: #ddd;
-  -webkit-box-shadow: 0 -1px 4px #ccc inset;
-  box-shadow: 0 -1px 4px #ccc inset;
-  border: 1px solid #ccc;
   padding: 15px;
   border-radius: 3px;
 }
 .widget a {
-  color: #258fb8;
+  color: #4183c4;
   text-decoration: none;
+  font-family: "Georgia", "Microsoft YaHei", "Times New Roman", serif;
 }
 .widget a:hover {
   text-decoration: underline;
@@ -1323,6 +1534,17 @@ pre .javascript .function {
 .widget dl dl {
   margin-left: 15px;
   list-style: disc;
+}
+.widget .text {
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.widget-background1 {
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 100% auto;
 }
 .widget {
   line-height: 1.6em;
@@ -1352,7 +1574,7 @@ pre .javascript .function {
 .tag-list-count,
 .archive-list-count {
   padding-left: 5px;
-  color: #999;
+  color: #a4a4a4;
   font-size: 0.85em;
 }
 .category-list-count:before,
