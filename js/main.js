@@ -63,6 +63,7 @@
   // ==========================================================================
   const filterTabs = document.querySelectorAll('.filter-tab');
   const projectCards = document.querySelectorAll('.project-card');
+  const projectsGrid = document.querySelector('.projects-grid');
 
   filterTabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -72,16 +73,27 @@
 
       // Filter cards
       const filter = tab.dataset.filter;
+      projectsGrid.classList.add('filter-active');
 
       projectCards.forEach(card => {
         const category = card.dataset.category;
+        const shouldShow = filter === 'all' || category === filter;
+        const wasHidden = card.classList.contains('hidden');
 
-        if (filter === 'all' || category === filter) {
+        card.classList.remove('filter-enter');
+
+        if (shouldShow) {
+          // Apply the entrance state while the card is still hidden so it
+          // cannot flash at full opacity before the animation begins.
+          if (wasHidden) {
+            card.classList.add('filter-enter');
+            card.addEventListener(
+              'animationend',
+              () => card.classList.remove('filter-enter'),
+              { once: true }
+            );
+          }
           card.classList.remove('hidden');
-          // Re-trigger animation
-          card.style.animation = 'none';
-          card.offsetHeight; // Trigger reflow
-          card.style.animation = '';
         } else {
           card.classList.add('hidden');
         }

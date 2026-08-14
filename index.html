@@ -58,6 +58,9 @@
           <a href="#projects" class="btn btn--ghost">
             Projects <span class="btn-arrow">↓</span>
           </a>
+          <a href="blog/" class="btn btn--ghost">
+            Blog <span class="btn-arrow">↗</span>
+          </a>
         </div>
 
         <div class="coord coord--tl">[0,0]</div>
@@ -73,37 +76,50 @@
       </div>
 
       <div class="experience-container">
-        <article class="experience-card experience-card--current">
-          <div class="exp-badge">CURRENT</div>
+        <article class="experience-card">
           <div class="exp-header">
             <h3 class="exp-title">Software Engineer</h3>
-            <span class="exp-date">2025/07 - Present</span>
+            <span class="exp-date">2025/07 - 2026/07</span>
           </div>
           <p class="exp-company">Abacus Inc. — Taipei, Taiwan</p>
           <ul class="exp-details">
             <li>
-              Leading development of demand forecasting agent using LangGraph
-              and LangChain, designing multi-agent workflow for inventory
-              planning
+              Built a demand-planning AI agent platform from the ground up
+              with FastAPI, SQLAlchemy, and React, including RAG chat,
+              goal-to-plan orchestration, persistent conversations, episodic
+              memory, user modeling, and metacognition
             </li>
             <li>
-              Architected state machine for managing agent interactions with
-              checkpointing for long-running forecasts and error recovery
+              Generated 1,000+ structured Markdown documents with source
+              provenance from the production codebase and indexed them with
+              pgvector for a privilege-aware, multi-turn RAG assistant with
+              non-invention guardrails
             </li>
             <li>
-              Built AI-powered recommendation system integrating statistical
-              forecasting with LLM-based analysis
+              Designed an agentic forecast-review framework separating
+              deterministic signal detection from LLM judgment through
+              read-only evidence tools, controlled options, schema-validated
+              outputs, and final human approval
             </li>
             <li>
-              Automated bi-directional workflow integration between GitLab and
-              Notion using n8n
+              Implemented human-in-the-loop ingestion for sales history and
+              PDF/Excel promotion schedules with cell-level traceability,
+              editable confirmation, and MAD-based anomaly classification
+            </li>
+            <li>
+              Shipped 95 merged MRs across the Java/Spring and React/TypeScript
+              production platform, built authenticated Java-to-Python
+              integration and PostgreSQL-backed CI, and packaged a Claude Code
+              plugin adopted by the team
             </li>
           </ul>
           <div class="exp-tech">
-            <span>LangGraph</span>
-            <span>LangChain</span>
-            <span>n8n</span>
-            <span>Python</span>
+            <span>FastAPI</span>
+            <span>SQLAlchemy</span>
+            <span>React</span>
+            <span>pgvector</span>
+            <span>Java/Spring</span>
+            <span>GitLab CI</span>
           </div>
         </article>
 
@@ -115,17 +131,24 @@
           <p class="exp-company">Galaxy Software Services — Taipei, Taiwan</p>
           <ul class="exp-details">
             <li>
-              Delivered 10+ features and resolved 30+ bugs for R.A.D.A.R
-              enterprise HRMS within 98 workdays
-            </li>
-            <!-- <li>Reduced payroll processing from 45-min timeout to 90 seconds through database query optimization</li> -->
-            <li>
-              Diagnosed N+1 query patterns affecting 100k+ employee payroll;
-              replaced with optimized CTEs and indexed joins
+              Delivered 10+ production features and resolved 30+ bugs for the
+              R.A.D.A.R enterprise HRMS within 98 workdays, including an
+              overtime redesign that reduced payroll processing from a
+              45-minute timeout to 90 seconds
             </li>
             <li>
-              Full-stack ownership using .NET MVC, TypeScript, Angular, T-SQL
-              with Agile/Git Flow
+              Diagnosed a payroll bottleneck affecting 5,000+ employees using
+              execution plans and replaced AI-generated N+1 queries and
+              temporary-table generation with optimized CTEs and indexed joins
+            </li>
+            <li>
+              Architected cross-company HR data integration with .NET MVC and
+              T-SQL batch processing while maintaining full-stack ownership of
+              personnel, scheduling, attendance, approval, and payroll modules
+            </li>
+            <li>
+              Collaborated across teams using TypeScript, Angular, and T-SQL
+              with Agile methodology and Git Flow
             </li>
           </ul>
           <div class="exp-tech">
@@ -139,7 +162,7 @@
         <article class="experience-card experience-card--research">
           <div class="exp-badge exp-badge--award">AWARD-WINNING</div>
           <div class="exp-header">
-            <h3 class="exp-title">Research: Cross-Environment RL Framework</h3>
+            <h3 class="exp-title">Adaptive Cross-Environment RL Framework</h3>
             <span class="exp-date">2023/09 - 2025/01</span>
           </div>
           <p class="exp-company">NSTC Project No. 113-2813-C-027-015-E</p>
@@ -147,15 +170,68 @@
             <li>Awarded NSTC College Student Research Scholarship</li>
             <li>Outstanding Paper Award at IETAC Conference</li>
             <li>
-              Developed open-source Python framework for RL generalization,
-              supporting 10+ algorithms with checkpointing for multi-day
-              training runs
+              Developed an open-source Python framework for reinforcement
+              learning generalization, investigating alternating and hybrid
+              strategies for improved cross-environment policy transfer
+            </li>
+            <li>
+              Designed explicit state management, multi-day checkpointing, and
+              recovery mechanisms that preserve consistency when training
+              environments fail mid-execution
+            </li>
+            <li>
+              Supported 10+ RL algorithms with documented failure modes and
+              graceful-degradation strategies
             </li>
           </ul>
           <div class="exp-tech">
             <span>Python</span>
             <span>DI-engine</span>
             <span>PyPI</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+      <div class="section-header">
+        <span class="section-label">EDUCATION</span>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="education-records">
+        <article class="education-record">
+          <time class="education-date" datetime="2026-09">
+            2026/09 - EXPECTED 2028
+          </time>
+          <div class="education-content">
+            <div class="education-heading">
+              <h3>Northeastern University</h3>
+              <span>Seattle, WA</span>
+            </div>
+            <p>Khoury College of Computer Sciences</p>
+            <p class="education-degree">Master of Science in Computer Science</p>
+          </div>
+        </article>
+
+        <article class="education-record">
+          <time class="education-date" datetime="2021-09">
+            2021/09 - 2025/06
+          </time>
+          <div class="education-content">
+            <div class="education-heading">
+              <h3>National Taipei University of Technology</h3>
+              <span>Taipei, Taiwan</span>
+            </div>
+            <p class="education-degree">
+              Bachelor of Computer Science and Information Engineering
+            </p>
+            <ul class="education-facts" aria-label="Academic results">
+              <li>GPA 3.9/4.0</li>
+              <li>Department rank 5/67</li>
+              <li>Top 7.5%</li>
+            </ul>
           </div>
         </article>
       </div>
@@ -1159,6 +1235,10 @@
         <a href="mailto:catolin0229@gmail.com" class="footer-btn">
           <span class="footer-icon">@</span>
           <span>Email</span>
+        </a>
+        <a href="blog/" class="footer-btn">
+          <span class="footer-icon">#</span>
+          <span>Blog</span>
         </a>
       </div>
 

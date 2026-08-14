@@ -232,10 +232,10 @@ body::after {
   position: absolute;
   left: 0;
   font-size: 0.5rem;
-  animation: pulse 2s ease-in-out infinite;
+  animation: sectionMarkerPulse 2s ease-in-out infinite;
 }
 
-@keyframes pulse {
+@keyframes sectionMarkerPulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
 }
@@ -1014,12 +1014,115 @@ body::after {
 .experience-card--current::after {
   border-color: var(--cat-fullstack);
   background: var(--cat-fullstack);
-  animation: pulse 2s ease-in-out infinite;
+  animation: currentRolePulse 2s ease-in-out infinite;
 }
 
-@keyframes pulse {
+@keyframes currentRolePulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.4); }
   50% { box-shadow: 0 0 0 8px rgba(74, 222, 128, 0); }
+}
+
+/* --------------------------------------------------------------------------
+   Education Section - Compact Records
+   -------------------------------------------------------------------------- */
+.education {
+  padding: 0 var(--space-xl);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.education-records {
+  border-top: var(--line-hairline) solid var(--grid-accent);
+}
+
+.education-record {
+  position: relative;
+  display: grid;
+  grid-template-columns: 192px minmax(0, 1fr);
+  gap: var(--space-lg);
+  padding: var(--space-md) 0;
+  border-bottom: var(--line-hairline) solid var(--grid-accent);
+}
+
+.education-record::before {
+  content: '';
+  position: absolute;
+  top: calc(var(--space-md) + 4px);
+  left: 186px;
+  width: 7px;
+  height: 7px;
+  border: var(--line-thin) solid var(--accent-cyan);
+  background: var(--bg-primary);
+  transform: rotate(45deg);
+}
+
+.education-date {
+  padding-right: var(--space-md);
+  font-family: var(--font-technical);
+  font-size: 0.6875rem;
+  color: var(--accent-cyan);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.education-content {
+  padding-left: var(--space-md);
+  border-left: var(--line-hairline) solid var(--grid-accent);
+}
+
+.education-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.education-heading h3 {
+  font-family: var(--font-technical);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.education-heading span,
+.education-content > p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.education-heading span {
+  flex: 0 0 auto;
+  font-family: var(--font-technical);
+}
+
+.education-content .education-degree {
+  margin-top: 2px;
+  color: var(--text-secondary);
+}
+
+.education-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-md);
+  margin-top: var(--space-sm);
+  list-style: none;
+}
+
+.education-facts li {
+  position: relative;
+  font-family: var(--font-technical);
+  font-size: 0.625rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+.education-facts li + li::before {
+  content: '/';
+  position: absolute;
+  left: calc(-1 * var(--space-md) / 2 - 2px);
+  color: var(--grid-accent);
 }
 
 /* --------------------------------------------------------------------------
@@ -1134,6 +1237,28 @@ body::after {
 
 .project-card.hidden {
   display: none;
+}
+
+/* Filtering takes over from the one-time page-load animation. */
+.projects-grid.filter-active .project-card {
+  opacity: 1;
+  transform: translateY(0);
+  animation: none;
+}
+
+.projects-grid.filter-active .project-card.filter-enter {
+  animation: filterCardIn 180ms ease-out both;
+}
+
+@keyframes filterCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Featured card highlight */
@@ -1590,6 +1715,26 @@ body::after {
   .skills-group::after {
     display: none;
   }
+
+  .education-record {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+  }
+
+  .education-record::before {
+    top: calc(var(--space-md) + 3px);
+    left: 0;
+  }
+
+  .education-date {
+    padding-left: var(--space-md);
+    padding-right: 0;
+  }
+
+  .education-content {
+    padding-left: var(--space-md);
+    border-left: none;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1609,6 +1754,20 @@ body::after {
   .filter-tab {
     font-size: 0.5625rem;
     padding: 4px var(--space-sm);
+  }
+
+  .education-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .education-facts {
+    column-gap: var(--space-sm);
+  }
+
+  .education-facts li + li::before {
+    display: none;
   }
 }
 
