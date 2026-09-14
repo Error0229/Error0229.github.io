@@ -343,7 +343,10 @@ html[lang='zh-Hant'] .blog-prose h4 {
 }
 
 .blog-figure {
-  margin: 1.75em 0 2em;
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: 100%;
+  margin: 1.75em auto 2em;
   padding: var(--space-sm);
   border: var(--line-hairline) solid var(--grid-accent);
   background: var(--bg-card);
@@ -352,7 +355,9 @@ html[lang='zh-Hant'] .blog-prose h4 {
 .blog-figure img {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: auto;
+  margin: 0 auto;
   background: #fff;
 }
 

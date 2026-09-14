@@ -116,15 +116,18 @@
         return;
       }
 
-      const image = line.match(/^!\[([^\]]*)\]\(([^\s)]+)\)$/);
+      // Optional size hint: ![alt](src){width=320} or {width=60%}
+      const image = line.match(/^!\[([^\]]*)\]\(([^\s)]+)\)(?:\{width=(\d{1,4}%?)\})?$/);
       if (image) {
         flushTextBlocks();
         const alt = image[1].trim();
         const src = image[2];
+        const width = image[3] ? (image[3].endsWith('%') ? image[3] : `${image[3]}px`) : '';
+        const style = width ? ` style="width:${width}"` : '';
         const allowed = /^(https?:\/\/|\.\.?\/)/.test(src);
         if (allowed) {
           output.push(
-            `<figure class="blog-figure"><img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" />${alt ? `<figcaption>${escapeHtml(alt)}</figcaption>` : ''}</figure>`
+            `<figure class="blog-figure"${style}><img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" />${alt ? `<figcaption>${escapeHtml(alt)}</figcaption>` : ''}</figure>`
           );
         } else {
           paragraph.push(alt || src);
